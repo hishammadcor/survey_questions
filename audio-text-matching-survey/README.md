@@ -79,3 +79,18 @@ Click “Reset survey” in the footer. This clears stored participant ID, rando
 - `label` (sentence)
 - `filename` (audio filename)
 - `response` (Yes | No | Not Sure)
+
+### Server-side saving (new)
+A minimal Node/Express server is included to store progress and maintain a CSV on the server.
+
+- Start the server and static site together:
+  ```bash
+  cd audio-text-matching-survey/server
+  npm install
+  npm start
+  # open http://localhost:3000/
+  ```
+- Resume links include a `sid` parameter, e.g. `http://localhost:3000/?sid=<participant_id>`
+- The server stores per-session JSON in `server/data/sessions/` and appends CSV rows to `server/data/results.csv` on every progress update.
+
+Deploy the server to any Node host (Render, Fly.io, Railway, etc.), then serve the static app from the same server for simplicity.

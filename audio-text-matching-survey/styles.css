@@ -82,6 +82,15 @@ body {
   gap: 12px;
 }
 
+.secondary-controls {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resume-info { font-size: 14px; color: #0f172a; }
+
 .btn {
   padding: 12px 14px;
   border-radius: 10px;
@@ -91,6 +100,8 @@ body {
   font-size: 16px;
   transition: transform 0.02s ease-in-out, background 0.15s ease, box-shadow 0.15s ease;
 }
+
+.btn-secondary { background: #f8fafc; }
 
 .btn:hover { background: #f8fafc; }
 .btn:active { transform: translateY(1px); }
@@ -126,6 +137,8 @@ body {
   border-radius: 8px;
   padding: 12px;
 }
+
+.server-save-status { margin-top: 8px; color: #0f172a; font-size: 14px; }
 
 .footer {
   margin-top: 16px;

@@ -34,12 +34,17 @@
             <button id="btnNo" class="btn btn-no" data-response="No">No</button>
             <button id="btnUnsure" class="btn btn-unsure" data-response="Not Sure">Not Sure</button>
           </div>
+
+          <div class="secondary-controls">
+            <button id="continueLaterBtn" class="btn btn-secondary" type="button">Continue later</button>
+            <span id="resumeInfo" class="resume-info hidden"></span>
+          </div>
         </div>
 
         <div id="doneBlock" class="done-block hidden">
           <h2>All done—thank you!</h2>
-          <p>Your responses have been compiled and a CSV download should have started automatically. If it did not, you can download it manually below.</p>
-          <button id="downloadAgain" class="btn">Download Results CSV</button>
+          <p>Your progress and results have been saved on the server. You may close this page.</p>
+          <div id="serverSaveStatus" class="server-save-status"></div>
         </div>
 
         <div id="errorBlock" class="error-block hidden" role="alert"></div>

@@ -4,14 +4,14 @@ Audio-Text Matching Evaluation Survey logic
 - Creates an anonymous participant ID and persists it
 - Randomizes order per participant and persists progress
 - Loads audio on demand and displays sentence
-- Saves response after every click (localStorage)
-- On completion, triggers CSV download
+- Saves response after every click (localStorage and server)
+- On completion, saves to server (no client CSV)
 */
 
 const MANIFEST_CANDIDATES = [
-  'alpha_data/manifest.json',       // within app folder
-  '../alpha_data/manifest.json',    // repo root alpha_data when app is nested
-  '/alpha_data/manifest.json'       // absolute root
+  'alpha_data/manifest.json',
+  '../alpha_data/manifest.json',
+  '/alpha_data/manifest.json'
 ];
 const STORAGE_KEYS = {
   participantId: 'atm_participant_id',
@@ -19,8 +19,14 @@ const STORAGE_KEYS = {
   responses: 'atm_responses',
   index: 'atm_index'
 };
+const API_BASE = '/api';
 
 function $(id) { return document.getElementById(id); }
+
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
 
 function generateParticipantId() {
   const alphabet = 'abcdefghjkmnpqrstuvwxyz23456789';
@@ -32,24 +38,16 @@ function generateParticipantId() {
 }
 
 function shuffleArray(seed, array) {
-  // Deterministic shuffle using seed; for simplicity use Math.random with seeded LCG
   let a = array.slice();
   let s = 0;
   for (let i = 0; i < seed.length; i++) s = (s * 33 + seed.charCodeAt(i)) >>> 0;
   let state = (s ^ 0x9e3779b9) >>> 0;
-  function rand() {
-    state = (state * 1664525 + 1013904223) >>> 0; // LCG
-    return state / 0x100000000;
-  }
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
+  function rand() { state = (state * 1664525 + 1013904223) >>> 0; return state / 0x100000000; }
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
   return a;
 }
 
 function tryLoadJSON(paths) {
-  // Try to fetch JSON from the first path that returns ok
   return new Promise(async (resolve, reject) => {
     let lastError = null;
     for (const path of paths) {
@@ -58,57 +56,72 @@ function tryLoadJSON(paths) {
         if (!res.ok) { lastError = new Error(`Failed to load ${path}: ${res.status}`); continue; }
         const data = await res.json();
         return resolve({ data, pathUsed: path });
-      } catch (e) {
-        lastError = e;
-      }
+      } catch (e) { lastError = e; }
     }
     reject(lastError || new Error('No manifest found'));
   });
 }
 
-function saveLocal(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
-function loadLocal(key, fallback) {
-  const raw = localStorage.getItem(key);
-  if (!raw) return fallback;
-  try { return JSON.parse(raw); } catch { return fallback; }
-}
+function saveLocal(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+function loadLocal(key, fallback) { const raw = localStorage.getItem(key); if (!raw) return fallback; try { return JSON.parse(raw); } catch { return fallback; } }
 
-function showError(message) {
-  const el = $('errorBlock');
-  el.textContent = message;
-  el.classList.remove('hidden');
-}
+function showError(message) { const el = $('errorBlock'); el.textContent = message; el.classList.remove('hidden'); }
+function updateHeader(participantId, currentIndex, total) { $('participantInfo').textContent = `Participant: ${participantId}`; $('progress').textContent = total > 0 ? `Progress: ${currentIndex + 1} / ${total}` : ''; }
+function buildQuestionText(filename) { return `Does the following sentence match what you heard in the audio: ${filename}?`; }
 
-function updateHeader(participantId, currentIndex, total) {
-  $('participantInfo').textContent = `Participant: ${participantId}`;
-  $('progress').textContent = total > 0 ? `Progress: ${currentIndex + 1} / ${total}` : '';
+async function apiEnsureSession(participantId) {
+  try {
+    const res = await fetch(`${API_BASE}/session`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ participant_id: participantId }) });
+    if (!res.ok) throw new Error('Failed to ensure session');
+    return await res.json();
+  } catch { return null; }
 }
-
-function buildQuestionText(filename) {
-  return `Does the following sentence match what you heard in the audio: ${filename}?`;
+async function apiLoadProgress(participantId) {
+  try {
+    const res = await fetch(`${API_BASE}/session/${encodeURIComponent(participantId)}`, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch { return null; }
+}
+async function apiSaveProgress(state) {
+  try {
+    const res = await fetch(`${API_BASE}/progress`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) });
+    if (!res.ok) throw new Error('Failed to save');
+    return await res.json();
+  } catch (e) { return null; }
 }
 
 async function init() {
   try {
-    const participantId = loadLocal(STORAGE_KEYS.participantId, null) || generateParticipantId();
+    const sid = getQueryParam('sid');
+    let participantId = sid || loadLocal(STORAGE_KEYS.participantId, null) || generateParticipantId();
     saveLocal(STORAGE_KEYS.participantId, participantId);
 
+    await apiEnsureSession(participantId);
+
     const { data: manifest } = await tryLoadJSON(MANIFEST_CANDIDATES);
-    if (!Array.isArray(manifest) || manifest.length === 0) {
-      throw new Error('Manifest is empty or invalid.');
-    }
+    if (!Array.isArray(manifest) || manifest.length === 0) { throw new Error('Manifest is empty or invalid.'); }
 
     let order = loadLocal(STORAGE_KEYS.order, null);
+    let index = loadLocal(STORAGE_KEYS.index, 0);
+    let responses = loadLocal(STORAGE_KEYS.responses, []);
+
+    // Try loading server progress if sid present or local is empty
+    const serverProgress = await apiLoadProgress(participantId);
+    if (serverProgress && serverProgress.order && Array.isArray(serverProgress.order)) {
+      order = serverProgress.order;
+      index = typeof serverProgress.index === 'number' ? serverProgress.index : 0;
+      responses = Array.isArray(serverProgress.responses) ? serverProgress.responses : [];
+      saveLocal(STORAGE_KEYS.order, order);
+      saveLocal(STORAGE_KEYS.index, index);
+      saveLocal(STORAGE_KEYS.responses, responses);
+    }
+
     if (!order) {
       const indices = manifest.map((_, idx) => idx);
       order = shuffleArray(participantId, indices);
       saveLocal(STORAGE_KEYS.order, order);
     }
-
-    let index = loadLocal(STORAGE_KEYS.index, 0);
-    let responses = loadLocal(STORAGE_KEYS.responses, []);
 
     $('loading').classList.add('hidden');
     $('questionBlock').classList.remove('hidden');
@@ -123,7 +136,9 @@ async function init() {
       if (index >= order.length) {
         $('questionBlock').classList.add('hidden');
         $('doneBlock').classList.remove('hidden');
-        triggerCsvDownload(participantId, manifest, responses);
+        $('serverSaveStatus').textContent = 'Saving results to server…';
+        await saveToServer(participantId, order, responses, index, true);
+        $('serverSaveStatus').textContent = 'Results saved on server.';
         return;
       }
       const manifestIdx = order[index];
@@ -138,24 +153,24 @@ async function init() {
       updateHeader(participantId, index, order.length);
     }
 
+    async function saveToServer(pid, ord, resp, idx, completed = false) {
+      // Persist locally first
+      saveLocal(STORAGE_KEYS.order, ord);
+      saveLocal(STORAGE_KEYS.index, idx);
+      saveLocal(STORAGE_KEYS.responses, resp);
+      // Post to server (best-effort)
+      const payload = { participant_id: pid, order: ord, responses: resp, index: idx, completed: !!completed };
+      await apiSaveProgress(payload);
+    }
+
     function record(responseLabel) {
       const nowIso = new Date().toISOString();
       const manifestIdx = order[index];
-      const item = manifest[manifestIdx];
-      const row = {
-        participant_id: participantId,
-        timestamp: nowIso,
-        index: index,
-        manifest_index: manifestIdx,
-        audio: item.audio,
-        label: item.label,
-        filename: item.filename || '',
-        response: responseLabel
-      };
+      const row = { participant_id: participantId, timestamp: nowIso, index: index, manifest_index: manifestIdx, audio: manifest[manifestIdx].audio, label: manifest[manifestIdx].label, filename: manifest[manifestIdx].filename || '', response: responseLabel };
       responses.push(row);
-      saveLocal(STORAGE_KEYS.responses, responses);
       index += 1;
-      saveLocal(STORAGE_KEYS.index, index);
+      // Fire-and-forget server save
+      saveToServer(participantId, order, responses, index).catch(() => {});
       renderCurrent();
     }
 
@@ -163,8 +178,15 @@ async function init() {
     $('btnNo').addEventListener('click', () => record('No'));
     $('btnUnsure').addEventListener('click', () => record('Not Sure'));
 
-    $('downloadAgain').addEventListener('click', () => {
-      triggerCsvDownload(participantId, manifest, responses);
+    $('continueLaterBtn').addEventListener('click', async () => {
+      await saveToServer(participantId, order, responses, index);
+      const resumeUrl = new URL(window.location.href);
+      resumeUrl.searchParams.set('sid', participantId);
+      const link = resumeUrl.toString();
+      const info = $('resumeInfo');
+      info.textContent = `Saved. Use this link to resume: ${link}`;
+      info.classList.remove('hidden');
+      try { await navigator.clipboard.writeText(link); info.textContent += ' (copied to clipboard)'; } catch {}
     });
 
     $('resetBtn').addEventListener('click', () => {
@@ -173,50 +195,12 @@ async function init() {
         localStorage.removeItem(STORAGE_KEYS.order);
         localStorage.removeItem(STORAGE_KEYS.responses);
         localStorage.removeItem(STORAGE_KEYS.index);
-        location.reload();
+        location.href = location.pathname; // drop sid
       }
     });
 
     await renderCurrent();
-  } catch (err) {
-    console.error(err);
-    showError(err.message || 'Failed to initialize survey.');
-  }
-}
-
-function toCsvValue(value) {
-  if (value == null) return '';
-  const str = String(value);
-  if (/[,"\n]/.test(str)) {
-    return '"' + str.replace(/"/g, '""') + '"';
-  }
-  return str;
-}
-
-function rowsToCsv(rows) {
-  const header = [
-    'participant_id', 'timestamp', 'index', 'manifest_index', 'audio', 'label', 'filename', 'response'
-  ];
-  const lines = [header.join(',')];
-  for (const row of rows) {
-    const values = header.map(k => toCsvValue(row[k]));
-    lines.push(values.join(','));
-  }
-  return lines.join('\n');
-}
-
-function triggerCsvDownload(participantId, manifest, responses) {
-  const filename = `results_${participantId}.csv`;
-  const csv = rowsToCsv(responses);
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  } catch (err) { console.error(err); showError(err.message || 'Failed to initialize survey.'); }
 }
 
 window.addEventListener('DOMContentLoaded', init);
