@@ -8,8 +8,11 @@ Audio-Text Matching Evaluation Survey logic
 - On completion, triggers CSV download
 */
 
-const DATA_DIR = 'alpha_data';
-const MANIFEST_PATH = `${DATA_DIR}/manifest.json`;
+const MANIFEST_CANDIDATES = [
+  'alpha_data/manifest.json',       // within app folder
+  '../alpha_data/manifest.json',    // repo root alpha_data when app is nested
+  '/alpha_data/manifest.json'       // absolute root
+];
 const STORAGE_KEYS = {
   participantId: 'atm_participant_id',
   order: 'atm_order',
@@ -45,10 +48,21 @@ function shuffleArray(seed, array) {
   return a;
 }
 
-function loadJSON(path) {
-  return fetch(path, { cache: 'no-store' }).then(res => {
-    if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
-    return res.json();
+function tryLoadJSON(paths) {
+  // Try to fetch JSON from the first path that returns ok
+  return new Promise(async (resolve, reject) => {
+    let lastError = null;
+    for (const path of paths) {
+      try {
+        const res = await fetch(path, { cache: 'no-store' });
+        if (!res.ok) { lastError = new Error(`Failed to load ${path}: ${res.status}`); continue; }
+        const data = await res.json();
+        return resolve({ data, pathUsed: path });
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    reject(lastError || new Error('No manifest found'));
   });
 }
 
@@ -81,7 +95,7 @@ async function init() {
     const participantId = loadLocal(STORAGE_KEYS.participantId, null) || generateParticipantId();
     saveLocal(STORAGE_KEYS.participantId, participantId);
 
-    const manifest = await loadJSON(MANIFEST_PATH);
+    const { data: manifest } = await tryLoadJSON(MANIFEST_CANDIDATES);
     if (!Array.isArray(manifest) || manifest.length === 0) {
       throw new Error('Manifest is empty or invalid.');
     }
@@ -107,7 +121,6 @@ async function init() {
 
     async function renderCurrent() {
       if (index >= order.length) {
-        // done
         $('questionBlock').classList.add('hidden');
         $('doneBlock').classList.remove('hidden');
         triggerCsvDownload(participantId, manifest, responses);
