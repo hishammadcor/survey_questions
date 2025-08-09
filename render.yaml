@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: survey-api
+    env: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: GITHUB_REPO
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_BRANCH
+        value: main
+      - key: GITHUB_DIR
+        value: survey_data
+    disks:
+      - name: survey-data
+        mountPath: /var/data
+        sizeGB: 1
