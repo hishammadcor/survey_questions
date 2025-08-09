@@ -1,0 +1,740 @@
+[
+  {
+    "id": "2297_10194_000000_0.25",
+    "audio": "alpha_data/2297_10194_000000_0.25.wav",
+    "label": "less than the cloud to the wind less than the cloud to the wind less than the foam to the sea less than the rose to the storm am i to thee",
+    "filename": "2297_10194_000000_0.25.wav"
+  },
+  {
+    "id": "2297_1437_000030_0.20",
+    "audio": "alpha_data/2297_1437_000030_0.20.wav",
+    "label": "the leaves withered the flower petals fell and we heard no more the crackling of bamboos in the wind then the pitiful survivors of the destruction were brought to us now a baby flying lemur flung from its hole by the falling of some tree",
+    "filename": "2297_1437_000030_0.20.wav"
+  },
+  {
+    "id": "2297_1437_000062_0.25",
+    "audio": "alpha_data/2297_1437_000062_0.25.wav",
+    "label": "not to weaken my argument with too many general statements let me take at once some concrete cases first that of the himalayan pheasants and game-birds",
+    "filename": "2297_1437_000062_0.25.wav"
+  },
+  {
+    "id": "2297_1437_000071_0.30",
+    "audio": "alpha_data/2297_1437_000071_0.30.wav",
+    "label": "from its northern border mt everest looks down from its most exalted of all earthly summits and sees valley after valley depleted of first one bird and then another",
+    "filename": "2297_1437_000071_0.30.wav"
+  },
+  {
+    "id": "2297_1679_000002_0.25",
+    "audio": "alpha_data/2297_1679_000002_0.25.wav",
+    "label": "we were talking about your brother you are going to him are you not yes i leave london on sunday night but only for a day or two",
+    "filename": "2297_1679_000002_0.25.wav"
+  },
+  {
+    "id": "2297_1679_000073_0.25",
+    "audio": "alpha_data/2297_1679_000073_0.25.wav",
+    "label": "of course i am unfit to maintain the proprieties of a seeming confidence between a crown all powerless and a people all-powerful no man recognises his own unfitness for such work more clearly than i do mr monk",
+    "filename": "2297_1679_000073_0.25.wav"
+  },
+  {
+    "id": "2297_1679_000079_0.20",
+    "audio": "alpha_data/2297_1679_000079_0.20.wav",
+    "label": "mr finn said she how d'ye do i want to say a word to ye just come here into the corner phineas not knowing how to escape did retreat into the corner with miss fitzgibbon tell me now mr finn have ye been lending money to laurence",
+    "filename": "2297_1679_000079_0.20.wav"
+  },
+  {
+    "id": "2297_1679_000106_0.25",
+    "audio": "alpha_data/2297_1679_000106_0.25.wav",
+    "label": "i remember lord palmerston saying before some committee about salaries five or six years ago now i daresay that it wouldn't do for an english minister to have his hall door opened by a maid-servant",
+    "filename": "2297_1679_000106_0.25.wav"
+  },
+  {
+    "id": "2297_1679_000157_0.20",
+    "audio": "alpha_data/2297_1679_000157_0.20.wav",
+    "label": "mr kennedy gave periodical dinners once a week to which everybody went who could get an invitation and phineas had been a guest more than once indeed in spite of his miseries he had taken to dining out a good deal and was popular as an eater of dinners",
+    "filename": "2297_1679_000157_0.20.wav"
+  },
+  {
+    "id": "2297_1679_000212_0.15",
+    "audio": "alpha_data/2297_1679_000212_0.15.wav",
+    "label": "lord brentford would put me down at once if i spoke to him on such a subject i am sure he would not you are too big to be put down and no man can really dislike to hear his son well spoken of by those who are well spoken of themselves won't you try mr finn",
+    "filename": "2297_1679_000212_0.15.wav"
+  },
+  {
+    "id": "2297_1679_000251_0.10",
+    "audio": "alpha_data/2297_1679_000251_0.10.wav",
+    "label": "because i feel so anxious that you should do nothing to mar your chances as a rising man you are only too kind to me always",
+    "filename": "2297_1679_000251_0.10.wav"
+  },
+  {
+    "id": "2297_1707_000054_0.15",
+    "audio": "alpha_data/2297_1707_000054_0.15.wav",
+    "label": "he affected to yield but as soon as he was conducted within hearing of the christians on the rampart friends and brethren he cried with a loud voice be bold and patient maintain the city your sovereign is informed of your distress and your deliverers are at hand",
+    "filename": "2297_1707_000054_0.15.wav"
+  },
+  {
+    "id": "2297_1707_000152_0.30",
+    "audio": "alpha_data/2297_1707_000152_0.30.wav",
+    "label": "after a long indulgence of rapine and slaughter a fair and ample territory was accepted occupied and named by the normans of france they renounced their gods for the god of the christians and the dukes of normandy acknowledged themselves the vassals of the successors of charlemagne and capet",
+    "filename": "2297_1707_000152_0.30.wav"
+  },
+  {
+    "id": "2297_1718_000054_0.30",
+    "audio": "alpha_data/2297_1718_000054_0.30.wav",
+    "label": "so wondrous like in feature shape and size as caus'd an error in their parents eyesgrateful mistake but soon the sword decides the nice distinction and their fate divides",
+    "filename": "2297_1718_000054_0.30.wav"
+  },
+  {
+    "id": "2297_1718_000079_0.20",
+    "audio": "alpha_data/2297_1718_000079_0.20.wav",
+    "label": "then when i gave my person and my throne this hate this rage had been more timely shown see now the promis'd faith the vaunted name the pious man who rushing thro the flame preserv'd his gods",
+    "filename": "2297_1718_000079_0.20.wav"
+  },
+  {
+    "id": "2297_1718_000101_0.20",
+    "audio": "alpha_data/2297_1718_000101_0.20.wav",
+    "label": "he said and straight a whirling dart he sent another after and another went round in a spacious ring he rides the field and vainly plies th impenetrable shield",
+    "filename": "2297_1718_000101_0.20.wav"
+  },
+  {
+    "id": "2297_1718_000213_0.07",
+    "audio": "alpha_data/2297_1718_000213_0.07.wav",
+    "label": "then shalt thou call on injur'd dido's name dido shall come in a black sulph'ry flame when death has once dissolv'd her mortal frame shall smile to see the traitor vainly weep",
+    "filename": "2297_1718_000213_0.07.wav"
+  },
+  {
+    "id": "2297_1718_000252_0.20",
+    "audio": "alpha_data/2297_1718_000252_0.20.wav",
+    "label": "meantime by jove's impulse mezentius arm'd succeeding turnus with his ardor warm'd his fainting friends reproach'd their shameful flight repell'd the victors and renew'd the fight",
+    "filename": "2297_1718_000252_0.20.wav"
+  },
+  {
+    "id": "2297_1718_000275_0.10",
+    "audio": "alpha_data/2297_1718_000275_0.10.wav",
+    "label": "here lies a barren waste of thirsty land and there the syrtes raise the moving sand barcaean troops besiege the narrow shore and from the sea pygmalion threatens more propitious heav'n and gracious juno lead this wand'ring navy to your needful aid",
+    "filename": "2297_1718_000275_0.10.wav"
+  },
+  {
+    "id": "2297_1718_000308_0.15",
+    "audio": "alpha_data/2297_1718_000308_0.15.wav",
+    "label": "and brave cupavo follow'd but by few whose helm confess'd the lineage of the man and bore with wings display'd a silver swan love was the fault of his fam'd ancestry whose forms and fortunes in his ensigns fly",
+    "filename": "2297_1718_000308_0.15.wav"
+  },
+  {
+    "id": "2297_1718_000487_0.15",
+    "audio": "alpha_data/2297_1718_000487_0.15.wav",
+    "label": "there find the trojan chief who wastes his days in slothful riot and inglorious ease nor minds the future city giv'n by fate to him this message from my mouth relate",
+    "filename": "2297_1718_000487_0.15.wav"
+  },
+  {
+    "id": "2297_1817_000140_0.20",
+    "audio": "alpha_data/2297_1817_000140_0.20.wav",
+    "label": "but the result is the same if hanssen had let bjaaland go on without any correction in the course of an hour or so the latter would probably have described a beautiful circle and brought himself back to the spot from which he had started",
+    "filename": "2297_1817_000140_0.20.wav"
+  },
+  {
+    "id": "2297_1817_000191_0.20",
+    "audio": "alpha_data/2297_1817_000191_0.20.wav",
+    "label": "their coats were surprisingly thick much more so than those of the older dogs they were remarkably plucky and would not give in to anyone and there are the smallest of all like little balls of wool they roll themselves in the snow and have great fun",
+    "filename": "2297_1817_000191_0.20.wav"
+  },
+  {
+    "id": "2297_1817_000495_0.30",
+    "audio": "alpha_data/2297_1817_000495_0.30.wav",
+    "label": "as soon as the dogs saw this they went forward again but this time at a pace that allowed us to keep up with them at a trot and soon after we were at the last mark as you see my lantern over at the camp is just going out so i hope you will excuse my accompanying you farther you know your way anyhow",
+    "filename": "2297_1817_000495_0.30.wav"
+  },
+  {
+    "id": "2297_1817_000500_0.07",
+    "audio": "alpha_data/2297_1817_000500_0.07.wav",
+    "label": "i could see nothing only heard that the two primuses were turned down i think it took about five minutes for the steam to disappear and what did i see then hassel bright as a new shilling dressed in his best for st hans eve",
+    "filename": "2297_1817_000500_0.07.wav"
+  },
+  {
+    "id": "2297_1817_000587_0.25",
+    "audio": "alpha_data/2297_1817_000587_0.25.wav",
+    "label": "wisting and lindstrm who were then in charge of the dogs put off in a boat and finally succeeded in overtaking him but they had a hard tussle before they managed to get him on board",
+    "filename": "2297_1817_000587_0.25.wav"
+  },
+  {
+    "id": "2297_1817_000641_0.15",
+    "audio": "alpha_data/2297_1817_000641_0.15.wav",
+    "label": "now everything was well as far as the hut was concerned it could not be better but the pent-house which it was originally intended to use as a workroom soon proved too small dark and cold",
+    "filename": "2297_1817_000641_0.15.wav"
+  },
+  {
+    "id": "2297_1817_000723_0.25",
+    "audio": "alpha_data/2297_1817_000723_0.25.wav",
+    "label": "only on the north-west did the ground give the impression of allowing a descent there a natural depression seemed to be formed running down towards the barrier which we could see far far away",
+    "filename": "2297_1817_000723_0.25.wav"
+  },
+  {
+    "id": "2297_1817_000724_0.15",
+    "audio": "alpha_data/2297_1817_000724_0.15.wav",
+    "label": "hassel throws with calculation what he calculates it is not easy to understand not on hitting the target apparently but if his calculations have to do with the kitchen-door then they are more successful",
+    "filename": "2297_1817_000724_0.15.wav"
+  },
+  {
+    "id": "2297_1817_000730_0.30",
+    "audio": "alpha_data/2297_1817_000730_0.30.wav",
+    "label": "but no he came out again at once holding a tattered old pack of cards in his hand he went back to his place and began a quiet and serious game of patience it did not take long and was probably not very complicated but it served its purpose",
+    "filename": "2297_1817_000730_0.30.wav"
+  },
+  {
+    "id": "2297_1953_000014_0.30",
+    "audio": "alpha_data/2297_1953_000014_0.30.wav",
+    "label": "the mountain tribes through whose land the army had to march were often unfriendly and rolled rocks down the mountain slopes upon the soldiers at last however the shores of the euxine were reached the greeks since the murder of their generals had marched for five months in an enemy's territory",
+    "filename": "2297_1953_000014_0.30.wav"
+  },
+  {
+    "id": "2297_1953_000100_0.15",
+    "audio": "alpha_data/2297_1953_000100_0.15.wav",
+    "label": "xerxes ordered his engineers to make two bridges of boats across the strait for the passage of the army this was done but the bridges were not strong enough and a storm destroyed them",
+    "filename": "2297_1953_000100_0.15.wav"
+  },
+  {
+    "id": "2297_1972_000022_0.10",
+    "audio": "alpha_data/2297_1972_000022_0.10.wav",
+    "label": "procure then this favour for me if you cannot procure the still greater that of a happy reconciliation which nevertheless i presume to hope for if you will be so good as to plead for me",
+    "filename": "2297_1972_000022_0.10.wav"
+  },
+  {
+    "id": "2297_1972_000062_0.10",
+    "audio": "alpha_data/2297_1972_000062_0.10.wav",
+    "label": "but mr solmes is a coarse man he is not delicate enough for your niceness because i suppose he dresses not like a fop and a coxcomb and because he lays not himself out in complimental nonsense the poison of female minds he is a man of sense that i can tell you",
+    "filename": "2297_1972_000062_0.10.wav"
+  },
+  {
+    "id": "2297_2047_000064_0.10",
+    "audio": "alpha_data/2297_2047_000064_0.10.wav",
+    "label": "he might revenge himself by scourging a servant of antony's who was then as it happened in octavius's power the news at length suddenly arrived at alexandria that octavius had appeared before pelusium and that the city had fallen into his hands",
+    "filename": "2297_2047_000064_0.10.wav"
+  },
+  {
+    "id": "2297_2120_000065_0.07",
+    "audio": "alpha_data/2297_2120_000065_0.07.wav",
+    "label": "she pays you your wages said lord fawn shortly eh wages yes my laird she does a that then she's your mistress andy again nodded his head and lord fawn again struggled to find some way in which he might approach his subject",
+    "filename": "2297_2120_000065_0.07.wav"
+  },
+  {
+    "id": "2297_2120_000078_0.20",
+    "audio": "alpha_data/2297_2120_000078_0.20.wav",
+    "label": "linlithgow's visit to her niece had been made on a thursday and on that same evening frank greystock had asked his question in the house of commons or rather had made his speech about the sawab of mygawb",
+    "filename": "2297_2120_000078_0.20.wav"
+  },
+  {
+    "id": "2297_2120_000261_0.25",
+    "audio": "alpha_data/2297_2120_000261_0.25.wav",
+    "label": "i think you leave lady linlithgow after the first week in april and it is quite necessary that you should come to some fixed arrangement as to the future if that were all there need not be any trouble as you will come here of course",
+    "filename": "2297_2120_000261_0.25.wav"
+  },
+  {
+    "id": "2297_2120_000294_0.30",
+    "audio": "alpha_data/2297_2120_000294_0.30.wav",
+    "label": "lady eustace had been so surprised by the announcement that hitherto she had not spoken a word the quarrel between her and her aunt had been of such a nature that it had seemed to be impossible that the old countess should come to mount street",
+    "filename": "2297_2120_000294_0.30.wav"
+  },
+  {
+    "id": "2297_2120_000327_0.25",
+    "audio": "alpha_data/2297_2120_000327_0.25.wav",
+    "label": "lord fawn did not speak to andy gowran again but mrs hittaway did after a faint and futile endeavour made by her to ascertain what had taken place in the parlour down-stairs she descended and found andy seated in his chair still holding his hat in his hand as stiff as a wax figure",
+    "filename": "2297_2120_000327_0.25.wav"
+  },
+  {
+    "id": "2297_2120_000336_0.10",
+    "audio": "alpha_data/2297_2120_000336_0.10.wav",
+    "label": "but she knew that there might be more of sound protection in lady linlithgow's real wrath than in lizzie's pretended affection so you are there are you said the countess yes i am here lady",
+    "filename": "2297_2120_000336_0.10.wav"
+  },
+  {
+    "id": "2297_2120_000430_0.30",
+    "audio": "alpha_data/2297_2120_000430_0.30.wav",
+    "label": "you know how frank i am with you giving you credit for honest sound good sense to me and to my girls who know you as a lady you are as dear a friend as though you were were",
+    "filename": "2297_2120_000430_0.30.wav"
+  },
+  {
+    "id": "2297_2120_000442_0.30",
+    "audio": "alpha_data/2297_2120_000442_0.30.wav",
+    "label": "but i can't bear the feeling the fact is a lawyer never understands what is and what is not fair fighting lucy felt her face tingling with heat and was preparing to say a word in defence of that special lawyer when lady fawn's voice was heard from the drawing-room window",
+    "filename": "2297_2120_000442_0.30.wav"
+  },
+  {
+    "id": "2297_2120_000579_0.20",
+    "audio": "alpha_data/2297_2120_000579_0.20.wav",
+    "label": "at this moment lady fawn appeared at the bottom of the stairs having passed lizzie as she was coming down not a syllable had then been spoken but lady fawn at once knew that much was wrong her son went up to her and whispered a word in her ear",
+    "filename": "2297_2120_000579_0.20.wav"
+  },
+  {
+    "id": "2297_2120_000648_0.25",
+    "audio": "alpha_data/2297_2120_000648_0.25.wav",
+    "label": "was not she the only lady eustace living as to these threats from mr camperdown and lady linlithgow she felt certain they would be used against her whether they were true or false she would break her heart should she abandon her prey and afterwards find that mr camperdown would have been wholly powerless against her had she held on to it",
+    "filename": "2297_2120_000648_0.25.wav"
+  },
+  {
+    "id": "2297_2120_000673_0.25",
+    "audio": "alpha_data/2297_2120_000673_0.25.wav",
+    "label": "where would she be should mr benjamin tell her that under some legal sanction he had given the jewels up to mr camperdown she hinted to mr benjamin that she would perhaps sell them if she got a good offer",
+    "filename": "2297_2120_000673_0.25.wav"
+  },
+  {
+    "id": "2297_2120_000716_0.15",
+    "audio": "alpha_data/2297_2120_000716_0.15.wav",
+    "label": "and i don't know that i should write at all if it wasn't for something else that must be said sooner or later because as to your coming here in april that is so much a matter of course the only mistake was that you should ever have gone away so we shall expect you here on whatever day you may arrange with lady linlithgow as to leaving her",
+    "filename": "2297_2120_000716_0.15.wav"
+  },
+  {
+    "id": "2297_2120_000756_0.25",
+    "audio": "alpha_data/2297_2120_000756_0.25.wav",
+    "label": "i am contented said lucy that assertion however could hardly have been true contented and did you tell him that you returned his love",
+    "filename": "2297_2120_000756_0.25.wav"
+  },
+  {
+    "id": "2297_2120_000783_0.15",
+    "audio": "alpha_data/2297_2120_000783_0.15.wav",
+    "label": "i think it was the very best speech i ever read in my life said lucy with headlong energy and heightened colour then miss morris you and i have very different opinions about speeches said lord fawn with severity you have probably never read burke's speeches",
+    "filename": "2297_2120_000783_0.15.wav"
+  },
+  {
+    "id": "2297_2154_000040_0.15",
+    "audio": "alpha_data/2297_2154_000040_0.15.wav",
+    "label": "their claims were readily deduced from the genuine or fabulous donations of the darker ages the successive steps of their final settlement would engage us too far in the transactions of italy and even of europe",
+    "filename": "2297_2154_000040_0.15.wav"
+  },
+  {
+    "id": "2297_2154_000149_0.20",
+    "audio": "alpha_data/2297_2154_000149_0.20.wav",
+    "label": "the speech perhaps the mind of the tribune was inspired with a lively regard for the purity of the faith he insinuated his claim to a supernatural mission from the holy ghost enforced by a heavy forfeiture the annual duty of confession and communion",
+    "filename": "2297_2154_000149_0.20.wav"
+  },
+  {
+    "id": "2297_2376_000163_0.25",
+    "audio": "alpha_data/2297_2376_000163_0.25.wav",
+    "label": "he frequently affirmed that he was haunted by his mother's ghost and persecuted with the whips and burning torches of the furies nay he attempted by magical rites to bring up her ghost from below and soften her rage against him",
+    "filename": "2297_2376_000163_0.25.wav"
+  },
+  {
+    "id": "2297_2376_000207_0.30",
+    "audio": "alpha_data/2297_2376_000207_0.30.wav",
+    "label": "he was also desirous to have it supposed that he had by revelations from this deity a knowledge of future events a few months before he died he attended a sacrifice according to the etruscan rites but the omens were not favourable",
+    "filename": "2297_2376_000207_0.30.wav"
+  },
+  {
+    "id": "2297_2376_000216_0.10",
+    "audio": "alpha_data/2297_2376_000216_0.10.wav",
+    "label": "two celebrated families the calvini and aenobarbi sprung from the race of the domitii the aenobarbi derive both their extraction and their cognomen from one lucius domitius of whom we have this tradition",
+    "filename": "2297_2376_000216_0.10.wav"
+  },
+  {
+    "id": "2297_2376_000298_0.15",
+    "audio": "alpha_data/2297_2376_000298_0.15.wav",
+    "label": "and as soon as that event was made public he went out to the cohort on guard between the hours of six and seven for the omens were so disastrous that no earlier time of the day was judged proper",
+    "filename": "2297_2376_000298_0.15.wav"
+  },
+  {
+    "id": "2297_2376_000317_0.20",
+    "audio": "alpha_data/2297_2376_000317_0.20.wav",
+    "label": "he took off by poison given them in their meat or drink nor did he proceed with less cruelty against those who were not of his family a blazing star which is vulgarly supposed to portend destruction to kings and princes appeared above the horizon several nights successively",
+    "filename": "2297_2376_000317_0.20.wav"
+  },
+  {
+    "id": "2297_2560_000291_0.07",
+    "audio": "alpha_data/2297_2560_000291_0.07.wav",
+    "label": "at this time dolabella who assumed the consulship upon caesar's death and hirtius who became consul during the next year used to attend upon cicero and take lessons in elocution",
+    "filename": "2297_2560_000291_0.07.wav"
+  },
+  {
+    "id": "2297_2560_000532_0.10",
+    "audio": "alpha_data/2297_2560_000532_0.10.wav",
+    "label": "in the third book he some time afterwards discusses the stoic doctrine with cato at the tusculan villa of lucullus near to his own he had walked over and rinding cato there by chance had immediately gone to work to demolish cato's philosophical doctrines",
+    "filename": "2297_2560_000532_0.10.wav"
+  },
+  {
+    "id": "2297_2560_000774_0.30",
+    "audio": "alpha_data/2297_2560_000774_0.30.wav",
+    "label": "and he applauds the people who would not clap their hands even in approval of the goddess of victory because she had shown herself in such bad company there are however but three lines on the subject",
+    "filename": "2297_2560_000774_0.30.wav"
+  },
+  {
+    "id": "2297_2560_000792_0.07",
+    "audio": "alpha_data/2297_2560_000792_0.07.wav",
+    "label": "auletes when in rome had required large sums of money suppliant kings when in the city needed money to buy venal senators and rabirius had supplied him",
+    "filename": "2297_2560_000792_0.07.wav"
+  },
+  {
+    "id": "2297_2560_000823_0.25",
+    "audio": "alpha_data/2297_2560_000823_0.25.wav",
+    "label": "his object was to banish catiline and not to catch in his net every existing conspirator he could stop the conspiracy by securing a few and might drive many into arms by endeavouring to encircle all was this cowardice",
+    "filename": "2297_2560_000823_0.25.wav"
+  },
+  {
+    "id": "2297_2560_000907_0.15",
+    "audio": "alpha_data/2297_2560_000907_0.15.wav",
+    "label": "the magistracy offered to him the lieutenancy offered to him the free legation offered to him the last appeal made to him that he would go to rome and speak a few words or that he would stay away and remain neutral did not move him",
+    "filename": "2297_2560_000907_0.15.wav"
+  },
+  {
+    "id": "2297_2560_000911_0.30",
+    "audio": "alpha_data/2297_2560_000911_0.30.wav",
+    "label": "but i cannot think that he should have been hindered by this trial and by caesar's mercy from taking such a step if by nothing else brutus and cassius also stabbed him the question to be decided is whether on public grounds these men were justified in killing him",
+    "filename": "2297_2560_000911_0.30.wav"
+  },
+  {
+    "id": "2297_2560_001152_0.07",
+    "audio": "alpha_data/2297_2560_001152_0.07.wav",
+    "label": "pompey had crossed the sea from brundisium and caesar had retreated across italy to capua as he was journeying he saw cicero and asked him to go to eome this cicero refused and caesar passed on",
+    "filename": "2297_2560_001152_0.07.wav"
+  },
+  {
+    "id": "2297_2560_001217_0.07",
+    "audio": "alpha_data/2297_2560_001217_0.07.wav",
+    "label": "to an older caius marcellus who was their father a colleague of his own in the college of augurs and to marcus the existing consul with his congratulations also to emilius paulus who had also been elected consul for the next year",
+    "filename": "2297_2560_001217_0.07.wav"
+  },
+  {
+    "id": "2297_2560_001218_0.15",
+    "audio": "alpha_data/2297_2560_001218_0.15.wav",
+    "label": "old age was creeping on it was better to write philosophy in friendship with caesar's friends than to be banished again whither he could not write it at all much no doubt he did in preparation for all those treatises which the next eighteen months were to bring forth",
+    "filename": "2297_2560_001218_0.15.wav"
+  },
+  {
+    "id": "2297_2560_001407_0.20",
+    "audio": "alpha_data/2297_2560_001407_0.20.wav",
+    "label": "he travelled at once up to rome which he reached on the last of august and there received a message from antony demanding his presence in the senate on the next day he had been greeted on his journey once again by the enthusiastic welcome of his countrymen",
+    "filename": "2297_2560_001407_0.20.wav"
+  },
+  {
+    "id": "2297_2560_001466_0.25",
+    "audio": "alpha_data/2297_2560_001466_0.25.wav",
+    "label": "it was but a short time before that cato had voted against the decree of the senate giving cicero his supplication cicero had then been much annoyed but now cato had died fighting for the eepublic and was to be forgiven all personal offences",
+    "filename": "2297_2560_001466_0.25.wav"
+  },
+  {
+    "id": "2297_2560_001472_0.07",
+    "audio": "alpha_data/2297_2560_001472_0.07.wav",
+    "label": "divorces were so common that no family odium was necessarily created cicero was at this moment most anxious to get back from dolabella his daughter's dowry",
+    "filename": "2297_2560_001472_0.07.wav"
+  },
+  {
+    "id": "2297_2560_001524_0.10",
+    "audio": "alpha_data/2297_2560_001524_0.10.wav",
+    "label": "recommended in this way you were told to declare yourself consul then he describes the way in which he endeavoured to prevent the nomination of dolabella to the same office cassar had said that dolabella should be consul but when caesar was dead this did not suit antony",
+    "filename": "2297_2560_001524_0.10.wav"
+  },
+  {
+    "id": "2297_2560_001825_0.10",
+    "audio": "alpha_data/2297_2560_001825_0.10.wav",
+    "label": "let us compare his honesty with that of the times in which he lived all the high rewards of the state were at his command and he might so have taken them as to have been safer firmer more powerful by taking them",
+    "filename": "2297_2560_001825_0.10.wav"
+  },
+  {
+    "id": "2297_2560_001903_0.07",
+    "audio": "alpha_data/2297_2560_001903_0.07.wav",
+    "label": "there were three candidates milo hypsseus and q metellus scipio by all of whom bribery and violence were used with open and unblushing profligacy",
+    "filename": "2297_2560_001903_0.07.wav"
+  },
+  {
+    "id": "2297_2560_001970_0.10",
+    "audio": "alpha_data/2297_2560_001970_0.10.wav",
+    "label": "of the orations and epistles i have spoken as i have gone on with my task because the matter there treated has been available for the purposes of biography the other two the ehetoric and the philosophy have been distinct from the author's life",
+    "filename": "2297_2560_001970_0.10.wav"
+  },
+  {
+    "id": "2297_2560_002045_0.10",
+    "audio": "alpha_data/2297_2560_002045_0.10.wav",
+    "label": "pompey on the other hand was nearly as warmly engaged in favour of hypsseus and scipio though in the turn which affairs took he seems to have been willing enough to accept the office himself when it came in his way",
+    "filename": "2297_2560_002045_0.10.wav"
+  },
+  {
+    "id": "2297_2560_002100_0.20",
+    "audio": "alpha_data/2297_2560_002100_0.20.wav",
+    "label": "middleton in his life volume two page four hundred thirty five gives us the opinion of suetonius on this subject and tells us that the best and wisest men in rome supposed caesar to have been justly killed",
+    "filename": "2297_2560_002100_0.20.wav"
+  },
+  {
+    "id": "2297_2560_002608_0.25",
+    "audio": "alpha_data/2297_2560_002608_0.25.wav",
+    "label": "there are a few passages of peculiar force addressing himself to the rival of plancius he tells laterensis that even though the people might have judged badly in selecting plancius it was not the less his duty to accept the judgment of the people",
+    "filename": "2297_2560_002608_0.25.wav"
+  },
+  {
+    "id": "2297_2560_002624_0.07",
+    "audio": "alpha_data/2297_2560_002624_0.07.wav",
+    "label": "nor did he leave himself to his own devices but took to himself a master of eloquence who might teach him when to make use of his arms where to stamp his feet and in what way to throw his toga about with a graceful passion",
+    "filename": "2297_2560_002624_0.07.wav"
+  },
+  {
+    "id": "2297_2599_000142_0.07",
+    "audio": "alpha_data/2297_2599_000142_0.07.wav",
+    "label": "balkh and bokhara there meet bengal and bombay and try to draw eye-teeth you can buy ponies turquoises persian pussy-cats saddle-bags fat-tailed sheep and musk in the kumharsen serai and get many strange things for nothing",
+    "filename": "2297_2599_000142_0.07.wav"
+  },
+  {
+    "id": "2297_2599_000154_0.10",
+    "audio": "alpha_data/2297_2599_000154_0.10.wav",
+    "label": "i was more than a little astonished and expressed my feelings accordingly it's true said carnehan with a dry cackle nursing his feet which were wrapped in rags true as gospel kings we were with crowns upon our heads me and dravot poor",
+    "filename": "2297_2599_000154_0.10.wav"
+  },
+  {
+    "id": "2297_2599_000163_0.15",
+    "audio": "alpha_data/2297_2599_000163_0.15.wav",
+    "label": "i leaned forward and looked into his face as steadily as i could he dropped one hand upon the table and i grasped it by the wrist it was twisted like a bird's claw and upon the back was a ragged red diamond-shaped scar",
+    "filename": "2297_2599_000163_0.15.wav"
+  },
+  {
+    "id": "2297_2599_000205_0.07",
+    "audio": "alpha_data/2297_2599_000205_0.07.wav",
+    "label": "then she turned up at dadur junction in tow of a half-caste and had the impidence to say i was her husband all among the drivers of the running shed we've done with that says dravot these women are whiter than you or me and a queen i will have for the winter months",
+    "filename": "2297_2599_000205_0.07.wav"
+  },
+  {
+    "id": "2297_2599_000232_0.10",
+    "audio": "alpha_data/2297_2599_000232_0.10.wav",
+    "label": "dravot damned them all round what's wrong with me he shouts standing by the idol imbra am i a dog or am i not enough of a man for your wenches haven't i put the shadow of my hand over this country who stopped the last afghan raid",
+    "filename": "2297_2599_000232_0.10.wav"
+  },
+  {
+    "id": "2297_2599_000278_0.20",
+    "audio": "alpha_data/2297_2599_000278_0.20.wav",
+    "label": "i came back with what i had and distributed em among the men that the chiefs sent in to me to drill dravot was too busy to attend to those things but the old army that we first made helped me",
+    "filename": "2297_2599_000278_0.20.wav"
+  },
+  {
+    "id": "2297_2626_000046_0.30",
+    "audio": "alpha_data/2297_2626_000046_0.30.wav",
+    "label": "the next morning the armada hove in sight advancing from the westward up the channel in a vast crescent which extended for seven miles from north to south and seemed to sweep the whole sea",
+    "filename": "2297_2626_000046_0.30.wav"
+  },
+  {
+    "id": "2297_2646_000027_0.30",
+    "audio": "alpha_data/2297_2646_000027_0.30.wav",
+    "label": "it is not necessary said she that we should feel what we say but it is alwajfs necessary that wc obey our superiors i will not lie i answered hotly and at the same time trembled lest my disobedience had finally consigned me to torment",
+    "filename": "2297_2646_000027_0.30.wav"
+  },
+  {
+    "id": "2297_2646_000073_0.10",
+    "audio": "alpha_data/2297_2646_000073_0.10.wav",
+    "label": "moreover every child ought to know the names and ways of life of the things it eats how to grow them etc how are gardens possible in a dty",
+    "filename": "2297_2646_000073_0.10.wav"
+  },
+  {
+    "id": "2297_2646_000215_0.25",
+    "audio": "alpha_data/2297_2646_000215_0.25.wav",
+    "label": "at any rate it is worth while to try to find out what is the matter in the spirit of a searcher after truth which is the first point i want to establish that the general complaints of children are true criticisms of the school system",
+    "filename": "2297_2646_000215_0.25.wav"
+  },
+  {
+    "id": "2297_2684_000011_0.07",
+    "audio": "alpha_data/2297_2684_000011_0.07.wav",
+    "label": "project gutenberg's maggie a girl of the streets by stephen crane",
+    "filename": "2297_2684_000011_0.07.wav"
+  },
+  {
+    "id": "2297_2877_000047_0.07",
+    "audio": "alpha_data/2297_2877_000047_0.07.wav",
+    "label": "he had no one belonging to him he had been deprived of his young bride and left desolate he could ruin no one but himself where could there be a man in all the world who had a more perfect right to play a trick with his own prospects",
+    "filename": "2297_2877_000047_0.07.wav"
+  },
+  {
+    "id": "2297_2877_000111_0.15",
+    "audio": "alpha_data/2297_2877_000111_0.15.wav",
+    "label": "i met the duke once at matching said phineas i remember it well i was there and first made the duke's acquaintance on that occasion i don't know how it was that we became intimate but we did and then i formed a sort of friendship with lady glencora",
+    "filename": "2297_2877_000111_0.15.wav"
+  },
+  {
+    "id": "2297_2877_000180_0.25",
+    "audio": "alpha_data/2297_2877_000180_0.25.wav",
+    "label": "there had been as yet but one year of it and the natural enemies who had at first expressed themselves as glad that the turn had come might have endured the period of spoliation with more equanimity",
+    "filename": "2297_2877_000180_0.25.wav"
+  },
+  {
+    "id": "2297_2877_000184_0.10",
+    "audio": "alpha_data/2297_2877_000184_0.10.wav",
+    "label": "by no means said phineas who had always disliked ratler and had known himself to be disliked in return i expect nothing browborough understands such a place as tankerville so well",
+    "filename": "2297_2877_000184_0.10.wav"
+  },
+  {
+    "id": "2297_2912_000041_0.07",
+    "audio": "alpha_data/2297_2912_000041_0.07.wav",
+    "label": "sage said madame reuter et a vrai dire vous en avez bien l'air take one drop of the punch or ponche as she pronounced it it is an agreeable and wholesome beverage after a full meal",
+    "filename": "2297_2912_000041_0.07.wav"
+  },
+  {
+    "id": "2297_2912_000174_0.07",
+    "audio": "alpha_data/2297_2912_000174_0.07.wav",
+    "label": "i had only time to make these general observations when madame pelet coming forward with what she intended should be a graceful and elastic step thus accosted me",
+    "filename": "2297_2912_000174_0.07.wav"
+  },
+  {
+    "id": "2297_2924_000047_0.20",
+    "audio": "alpha_data/2297_2924_000047_0.20.wav",
+    "label": "such an institution would have been as openly subversive of republican government as royalty or the dictatorship nevertheless some of the functions of the censor and especially the census eqnitum seem from the very first to have fallen within the competence of the pi inceps",
+    "filename": "2297_2924_000047_0.20.wav"
+  },
+  {
+    "id": "2297_2924_000123_0.15",
+    "audio": "alpha_data/2297_2924_000123_0.15.wav",
+    "label": "of this marriage germanicus was born and augustus selected him as a husband for agrippina the emperor thus united his grandnephew with his granddaughter as he had before united his nephew with his daughter",
+    "filename": "2297_2924_000123_0.15.wav"
+  },
+  {
+    "id": "2297_2956_000019_0.30",
+    "audio": "alpha_data/2297_2956_000019_0.30.wav",
+    "label": "accustomed through a perpetual night to thread the windings of the city she had led them unerringly towards the sea-shore by which they had resolved to hazard an escape now which way could they wend all was rayless to them-a maze without a clue",
+    "filename": "2297_2956_000019_0.30.wav"
+  },
+  {
+    "id": "2297_2956_000058_0.30",
+    "audio": "alpha_data/2297_2956_000058_0.30.wav",
+    "label": "and along the plains beyond the city the darkness was now terribly relieved for several houses and even vineyards had been set on flames and at various intervals the fires rose suddenly and fiercely against the solid gloom",
+    "filename": "2297_2956_000058_0.30.wav"
+  },
+  {
+    "id": "2297_3064_000074_0.07",
+    "audio": "alpha_data/2297_3064_000074_0.07.wav",
+    "label": "there was skin only on the bones which was itself now almost sunk away by reason of disease of the viscera and overspreading filth",
+    "filename": "2297_3064_000074_0.07.wav"
+  },
+  {
+    "id": "2297_3440_000008_0.15",
+    "audio": "alpha_data/2297_3440_000008_0.15.wav",
+    "label": "and especially to congratulate the duke on the services of the honourable gentleman the member for mayo meaning thereby mr laurence fitzgibbon it would perhaps have been well for everybody if the measure could have been withdrawn and the ministry could have resigned without the debate",
+    "filename": "2297_3440_000008_0.15.wav"
+  },
+  {
+    "id": "2297_3440_000036_0.07",
+    "audio": "alpha_data/2297_3440_000036_0.07.wav",
+    "label": "but i'm not quite so sure of their principles on our own side in our old party there are a score of men who detest the duke though they would fain be true to the government they have voted with him through thick and thin and he has not spoken a word to one of them since he became prime minister what are you to do with such a man how are you to act with him",
+    "filename": "2297_3440_000036_0.07.wav"
+  },
+  {
+    "id": "2297_3440_000095_0.15",
+    "audio": "alpha_data/2297_3440_000095_0.15.wav",
+    "label": "work under such circumstances must be very grievous but such is often the fate of statesmen whether mr monk laboured under such a conviction the prime minister did not know though he saw his friend and colleague almost daily",
+    "filename": "2297_3440_000095_0.15.wav"
+  },
+  {
+    "id": "2297_3440_000104_0.25",
+    "audio": "alpha_data/2297_3440_000104_0.25.wav",
+    "label": "i hardly dare open my mouth to plantagenet the duke of st bungay has cut me mr monk looks as ominous as an owl and your husband hasn't a word to say left",
+    "filename": "2297_3440_000104_0.25.wav"
+  },
+  {
+    "id": "2297_3440_000105_0.25",
+    "audio": "alpha_data/2297_3440_000105_0.25.wav",
+    "label": "a man may be worn by care till there comes to be nothing left of him but he never speaks of giving up now the old bishop of st austell talks of resigning and he has already made up his mind who is to have the see",
+    "filename": "2297_3440_000105_0.25.wav"
+  },
+  {
+    "id": "2297_3440_000125_0.10",
+    "audio": "alpha_data/2297_3440_000125_0.10.wav",
+    "label": "he told himself on the spot though he was quite wrong in so telling himself that he had now made an enemy also of mr monk and through mr monk of phineas finn",
+    "filename": "2297_3440_000125_0.10.wav"
+  },
+  {
+    "id": "2297_3956_000018_0.07",
+    "audio": "alpha_data/2297_3956_000018_0.07.wav",
+    "label": "should you ever drop into the coffee-houses of the algerian upper town after dark even at this day you would still hear the natives chatting among themselves with many a wink and slight laugh of one sidi tart'ri",
+    "filename": "2297_3956_000018_0.07.wav"
+  },
+  {
+    "id": "2297_4090_000013_0.07",
+    "audio": "alpha_data/2297_4090_000013_0.07.wav",
+    "label": "the duke now encloses a cheque for that amount and requests that the document which lord percival holds from lord silverbridge as security for the amount may be returned to lord gerald",
+    "filename": "2297_4090_000013_0.07.wav"
+  },
+  {
+    "id": "2297_4309_000071_0.20",
+    "audio": "alpha_data/2297_4309_000071_0.20.wav",
+    "label": "the horse-path and wheel might possibly be four or five more and i am very certain that to any farmer living at a mile from a mill and that is less than the average distance perhaps having twelve persons in family having forty pigs to feed and twenty hogs to fatten",
+    "filename": "2297_4309_000071_0.20.wav"
+  },
+  {
+    "id": "2297_4309_000632_0.07",
+    "audio": "alpha_data/2297_4309_000632_0.07.wav",
+    "label": "seeing that when wheat is ten shillings english the bushel you can have sixty-five pounds of bread for the ten shillings and can have out of potatoes only five pounds and a half of nutritious matter equal to bread for two shillings",
+    "filename": "2297_4309_000632_0.07.wav"
+  },
+  {
+    "id": "2297_4309_000707_0.07",
+    "audio": "alpha_data/2297_4309_000707_0.07.wav",
+    "label": "digging a piece of ground and planting it with early cabbages which she did as handily and as neatly as any gardener that ever i saw the ground was wet",
+    "filename": "2297_4309_000707_0.07.wav"
+  },
+  {
+    "id": "2297_4309_000772_0.20",
+    "audio": "alpha_data/2297_4309_000772_0.20.wav",
+    "label": "let any one try it and i am sure he will never use the drugs again the drugs if you take them freely leave a burning at the pit of your stomach which the real mustard does not",
+    "filename": "2297_4309_000772_0.20.wav"
+  },
+  {
+    "id": "2297_4309_000971_0.20",
+    "audio": "alpha_data/2297_4309_000971_0.20.wav",
+    "label": "are there twenty-two square miles covered with the wen's market gardens the very question is absurd the whole of the market gardens from brompton to hammersmith extending to battersea rise on the one side and to the bayswater road on the other side",
+    "filename": "2297_4309_000971_0.20.wav"
+  },
+  {
+    "id": "2297_4309_001170_0.15",
+    "audio": "alpha_data/2297_4309_001170_0.15.wav",
+    "label": "this adds six pounds of bread to the bushel or nearly another quartern loaf and a half making nearly fifteen quartern loaves out of the bushel of wheat the finest flour is by no means the most wholesome and at any rate there is more nutritious matter in a pound of household bread than in a pound of baker's bread",
+    "filename": "2297_4309_001170_0.15.wav"
+  },
+  {
+    "id": "2297_4440_000018_0.10",
+    "audio": "alpha_data/2297_4440_000018_0.10.wav",
+    "label": "the doctor do you think i'm going to begin taking physic at my time of life lord ma'am you amuse me-you do indeed she burst into a sudden fit of laughter the hysterical laughter which is on the verge of tears",
+    "filename": "2297_4440_000018_0.10.wav"
+  },
+  {
+    "id": "2297_4440_000046_0.25",
+    "audio": "alpha_data/2297_4440_000046_0.25.wav",
+    "label": "i noticed her yesterday evening in the garden under the schoolroom window one of the girls dropped a dictionary she started at that slight noise as if it terrified her her nerves are seriously out of order can you prevail upon her to see the doctor",
+    "filename": "2297_4440_000046_0.25.wav"
+  },
+  {
+    "id": "2297_5415_000103_0.30",
+    "audio": "alpha_data/2297_5415_000103_0.30.wav",
+    "label": "a mere distinguishing peculiarity by catching the eye is often read as the pervading characteristic and she appeared to him no less than perfection throughout transcending her rural rivals in very nature",
+    "filename": "2297_5415_000103_0.30.wav"
+  },
+  {
+    "id": "2297_7704_000005_0.10",
+    "audio": "alpha_data/2297_7704_000005_0.10.wav",
+    "label": "nevertheless it steads not m de lamoignon it steads not the doomed man that he have interviews with the king and be seen to return radieux emitting rays lamoignon is the hated of parlements comte de brienne is brother to the cardinal archbishop",
+    "filename": "2297_7704_000005_0.10.wav"
+  },
+  {
+    "id": "2297_9276_000041_0.10",
+    "audio": "alpha_data/2297_9276_000041_0.10.wav",
+    "label": "if it had been possible to draw back her foot and escape unnoticed but she was observed hubert had already risen adela fancied that stella was closely observing her",
+    "filename": "2297_9276_000041_0.10.wav"
+  },
+  {
+    "id": "2297_9276_000324_0.15",
+    "audio": "alpha_data/2297_9276_000324_0.15.wav",
+    "label": "but the understanding of his motives was so terribly distinct in her it had come all at once it was like the exposure of something dreadful by the sudden raising of a veil and had she not known what the veil covered",
+    "filename": "2297_9276_000324_0.15.wav"
+  },
+  {
+    "id": "2297_9276_000326_0.25",
+    "audio": "alpha_data/2297_9276_000326_0.25.wav",
+    "label": "and it should lead to further question she felt that hard as it was to live with that secret to hear mutimer repeat his calumnies would involve her in yet worse anguish leading perhaps to terrible things",
+    "filename": "2297_9276_000326_0.25.wav"
+  },
+  {
+    "id": "2297_9276_000387_0.20",
+    "audio": "alpha_data/2297_9276_000387_0.20.wav",
+    "label": "i have come because i could not help it miss mutimer it is more than a month since i had the happiness of seeing you he stood by the couch his body bent in deference his eyes regarding her with melancholy homage",
+    "filename": "2297_9276_000387_0.20.wav"
+  },
+  {
+    "id": "2297_9276_000546_0.30",
+    "audio": "alpha_data/2297_9276_000546_0.30.wav",
+    "label": "who contrived that marriage she asked of mr westlake subsequently our lady mother presumably i have no reason to think it was not well done replied mr westlake with reserve most skilfully done no doubt rejoined the lady",
+    "filename": "2297_9276_000546_0.30.wav"
+  },
+  {
+    "id": "2297_9724_000010_0.30",
+    "audio": "alpha_data/2297_9724_000010_0.30.wav",
+    "label": "we always took up our notes ore the day and made all considerable payments by draughts upon our banker vou will easily believe that i was well enough pleased th my condition for what happiness can be greater than that of growing every day richer and richer",
+    "filename": "2297_9724_000010_0.30.wav"
+  }
+]
