@@ -17,7 +17,8 @@ const STORAGE_KEYS = {
   participantId: 'atm_participant_id',
   order: 'atm_order',
   responses: 'atm_responses',
-  index: 'atm_index'
+  index: 'atm_index',
+  introSeen: 'atm_intro_seen'
 };
 const API_BASE = '/api';
 
@@ -115,18 +116,43 @@ async function init() {
       saveLocal(STORAGE_KEYS.order, order);
       saveLocal(STORAGE_KEYS.index, index);
       saveLocal(STORAGE_KEYS.responses, responses);
+      // Mark intro as seen if there is any progress recorded
+      if ((serverProgress.index || 0) > 0 || (responses && responses.length > 0)) {
+        saveLocal(STORAGE_KEYS.introSeen, true);
+      }
     }
 
     if (!order) {
       const indices = manifest.map((_, idx) => idx);
       order = shuffleArray(participantId, indices);
       saveLocal(STORAGE_KEYS.order, order);
+      // Best-effort: send initial order to server so resume works even before first answer
+      try { await apiSaveProgress({ participant_id: participantId, order, responses, index }); } catch {}
     }
 
-    $('loading').classList.add('hidden');
-    $('questionBlock').classList.remove('hidden');
+    const introSeen = !!loadLocal(STORAGE_KEYS.introSeen, false);
 
-    updateHeader(participantId, Math.min(index, order.length - 1), order.length);
+    const introBlock = $('introBlock');
+    const beginBtn = $('beginBtn');
+
+    $('loading').classList.add('hidden');
+
+    function showIntro() {
+      introBlock.classList.remove('hidden');
+      $('questionBlock').classList.add('hidden');
+    }
+    function hideIntro() {
+      introBlock.classList.add('hidden');
+      $('questionBlock').classList.remove('hidden');
+    }
+
+    beginBtn?.addEventListener('click', () => {
+      saveLocal(STORAGE_KEYS.introSeen, true);
+      hideIntro();
+      renderCurrent();
+    });
+
+    updateHeader(participantId, Math.min(index, order?.length ? order.length - 1 : 0), order ? order.length : 0);
 
     const audio = $('audioPlayer');
     const sentenceText = $('sentenceText');
@@ -195,11 +221,18 @@ async function init() {
         localStorage.removeItem(STORAGE_KEYS.order);
         localStorage.removeItem(STORAGE_KEYS.responses);
         localStorage.removeItem(STORAGE_KEYS.index);
+        localStorage.removeItem(STORAGE_KEYS.introSeen);
         location.href = location.pathname; // drop sid
       }
     });
 
-    await renderCurrent();
+    // Initial route: if intro not seen and there is no progress yet, show intro.
+    if (!introSeen && (!responses || responses.length === 0) && (index === 0)) {
+      showIntro();
+    } else {
+      hideIntro();
+      await renderCurrent();
+    }
   } catch (err) { console.error(err); showError(err.message || 'Failed to initialize survey.'); }
 }
 
