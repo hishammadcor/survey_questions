@@ -21,6 +21,6 @@ services:
       - key: GITHUB_DIR
         value: survey_data
     disk:
-      - name: survey-data
-        mountPath: /var/data
-        sizeGB: 1
+      name: survey-data
+      mountPath: /var/data
+      sizeGB: 1
