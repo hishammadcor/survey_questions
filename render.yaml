@@ -13,14 +13,14 @@ services:
       - key: DATA_DIR
         value: /var/data
       - key: GITHUB_REPO
-        sync: false
+        value: hishammadcor/survey_questions
       - key: GITHUB_TOKEN
-        sync: false
+        fromSecret: GITHUB_TOKEN
       - key: GITHUB_BRANCH
         value: main
       - key: GITHUB_DIR
         value: survey_data
-    disks:
+    disk:
       - name: survey-data
         mountPath: /var/data
         sizeGB: 1
