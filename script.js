@@ -20,7 +20,17 @@ const STORAGE_KEYS = {
   index: 'atm_index',
   introSeen: 'atm_intro_seen'
 };
-const API_BASE = '/api';
+const DEFAULT_API_BASE = '/api';
+function getApiBase() {
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = params.get('api');
+  if (fromQuery) return fromQuery.replace(/\/$/, '');
+  if (window.SURVEY_CONFIG && window.SURVEY_CONFIG.apiBase) {
+    return String(window.SURVEY_CONFIG.apiBase).replace(/\/$/, '');
+  }
+  return DEFAULT_API_BASE;
+}
+let API_BASE = getApiBase();
 
 function $(id) { return document.getElementById(id); }
 
