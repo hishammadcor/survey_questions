@@ -15,9 +15,6 @@ const MANIFEST_CANDIDATES = [
 ];
 const STORAGE_KEYS = {
   participantId: 'atm_participant_id',
-  order: 'atm_order',
-  responses: 'atm_responses',
-  index: 'atm_index',
   introSeen: 'atm_intro_seen'
 };
 const DEFAULT_API_BASE = '/api';
@@ -113,30 +110,21 @@ async function init() {
     const { data: manifest } = await tryLoadJSON(MANIFEST_CANDIDATES);
     if (!Array.isArray(manifest) || manifest.length === 0) { throw new Error('Manifest is empty or invalid.'); }
 
-    let order = loadLocal(STORAGE_KEYS.order, null);
-    let index = loadLocal(STORAGE_KEYS.index, 0);
-    let responses = loadLocal(STORAGE_KEYS.responses, []);
+    // Load server progress only
+    let order = null;
+    let index = 0;
+    let responses = [];
 
-    // Try loading server progress if sid present or local is empty
     const serverProgress = await apiLoadProgress(participantId);
-    if (serverProgress && serverProgress.order && Array.isArray(serverProgress.order)) {
+    if (serverProgress && Array.isArray(serverProgress.order)) {
       order = serverProgress.order;
       index = typeof serverProgress.index === 'number' ? serverProgress.index : 0;
       responses = Array.isArray(serverProgress.responses) ? serverProgress.responses : [];
-      saveLocal(STORAGE_KEYS.order, order);
-      saveLocal(STORAGE_KEYS.index, index);
-      saveLocal(STORAGE_KEYS.responses, responses);
-      // Mark intro as seen if there is any progress recorded
-      if ((serverProgress.index || 0) > 0 || (responses && responses.length > 0)) {
-        saveLocal(STORAGE_KEYS.introSeen, true);
-      }
     }
 
     if (!order) {
       const indices = manifest.map((_, idx) => idx);
       order = shuffleArray(participantId, indices);
-      saveLocal(STORAGE_KEYS.order, order);
-      // Best-effort: send initial order to server so resume works even before first answer
       try { await apiSaveProgress({ participant_id: participantId, order, responses, index }); } catch {}
     }
 
@@ -190,11 +178,6 @@ async function init() {
     }
 
     async function saveToServer(pid, ord, resp, idx, completed = false) {
-      // Persist locally first
-      saveLocal(STORAGE_KEYS.order, ord);
-      saveLocal(STORAGE_KEYS.index, idx);
-      saveLocal(STORAGE_KEYS.responses, resp);
-      // Post to server (best-effort)
       const payload = { participant_id: pid, order: ord, responses: resp, index: idx, completed: !!completed };
       await apiSaveProgress(payload);
     }
@@ -226,18 +209,14 @@ async function init() {
     });
 
     $('resetBtn').addEventListener('click', () => {
-      if (confirm('This will clear your local progress and reload the survey. Continue?')) {
+      if (confirm('This will clear your local participant ID and intro state. Continue?')) {
         localStorage.removeItem(STORAGE_KEYS.participantId);
-        localStorage.removeItem(STORAGE_KEYS.order);
-        localStorage.removeItem(STORAGE_KEYS.responses);
-        localStorage.removeItem(STORAGE_KEYS.index);
         localStorage.removeItem(STORAGE_KEYS.introSeen);
         location.href = location.pathname; // drop sid
       }
     });
 
-    // Initial route: if intro not seen and there is no progress yet, show intro.
-    if (!introSeen && (!responses || responses.length === 0) && (index === 0)) {
+    if (!introSeen && (responses.length === 0) && (index === 0)) {
       showIntro();
     } else {
       hideIntro();
