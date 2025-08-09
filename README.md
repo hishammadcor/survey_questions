@@ -119,3 +119,15 @@ On each progress save, the server will attempt to write:
 - `survey_data/results.csv`
 
 If the token or repo is not configured, the server continues to save locally.
+
+### Running the web app on GitHub Pages with a hosted server
+GitHub Pages is static and cannot accept POST requests. Host the server elsewhere (Render, Fly.io, Railway, Heroku, VM). Then point the web app to that server:
+
+- Option 1: Add a `config.js` in the repo root (same folder as `index.html`):
+  ```js
+  window.SURVEY_CONFIG = { apiBase: 'https://your-server-host/api' };
+  ```
+- Option 2: Use a URL parameter when sharing links:
+  - `https://<your-gh-pages>/index.html?api=https://your-server-host/api`
+
+On the server, the same codebase in `server/` should be deployed. The client will then call `https://your-server-host/api/*` for session and progress.
