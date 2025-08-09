@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audio-Text Matching Evaluation Survey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Audio-Text Matching Evaluation</h1>
+        <div id="participantInfo" class="participant-info"></div>
+        <div id="progress" class="progress"></div>
+      </header>
+
+      <section id="survey" class="survey" aria-live="polite">
+        <div id="loading" class="loading">Loading survey…</div>
+
+        <div id="questionBlock" class="question-block hidden">
+          <h2 id="questionText" class="question-text"></h2>
+
+          <div class="audio-block">
+            <audio id="audioPlayer" controls preload="none" aria-label="Audio sample"></audio>
+          </div>
+
+          <div class="sentence-block" aria-label="Sentence">
+            <div class="sentence-label">Sentence</div>
+            <blockquote id="sentenceText" class="sentence-text"></blockquote>
+          </div>
+
+          <div class="controls">
+            <button id="btnYes" class="btn btn-yes" data-response="Yes">Yes</button>
+            <button id="btnNo" class="btn btn-no" data-response="No">No</button>
+            <button id="btnUnsure" class="btn btn-unsure" data-response="Not Sure">Not Sure</button>
+          </div>
+        </div>
+
+        <div id="doneBlock" class="done-block hidden">
+          <h2>All done—thank you!</h2>
+          <p>Your responses have been compiled and a CSV download should have started automatically. If it did not, you can download it manually below.</p>
+          <button id="downloadAgain" class="btn">Download Results CSV</button>
+        </div>
+
+        <div id="errorBlock" class="error-block hidden" role="alert"></div>
+      </section>
+
+      <footer class="footer">
+        <button id="resetBtn" class="link-btn" type="button">Reset survey (clears local progress)</button>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
