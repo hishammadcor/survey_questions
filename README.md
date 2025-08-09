@@ -131,3 +131,24 @@ GitHub Pages is static and cannot accept POST requests. Host the server elsewher
   - `https://<your-gh-pages>/index.html?api=https://your-server-host/api`
 
 On the server, the same codebase in `server/` should be deployed. The client will then call `https://your-server-host/api/*` for session and progress.
+
+### Host the API on Render (one approach)
+We include `server/render.yaml` for Render.
+
+Steps:
+1. Fork this repo or connect it to Render.
+2. In Render, create a Web Service from the `server` directory using `render.yaml`.
+3. Set Secrets in Render:
+   - `GITHUB_TOKEN` (optional for mirroring)
+   - `GITHUB_REPO=hishammadcor/survey_questions`
+   - `GITHUB_BRANCH=main` (default)
+   - `GITHUB_DIR=survey_data` (default)
+4. Deploy; note the Base URL, e.g. `https://survey-api-xxxx.onrender.com`.
+5. Point the static site to the API:
+   - Add `config.js` to the repo root:
+     ```js
+     window.SURVEY_CONFIG = { apiBase: 'https://survey-api-xxxx.onrender.com/api' };
+     ```
+   - Or share a link with `?api=https://survey-api-xxxx.onrender.com/api`.
+
+Your GitHub Pages site remains static; all data POSTs go to the hosted API.
