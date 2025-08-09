@@ -10,17 +10,11 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATA_DIR
-        value: /var/data
       - key: GITHUB_REPO
         value: hishammadcor/survey_questions
       - key: GITHUB_TOKEN
-        fromSecret: GITHUB_TOKEN
+        value: ""
       - key: GITHUB_BRANCH
         value: main
       - key: GITHUB_DIR
         value: survey_data
-    disk:
-      name: survey-data
-      mountPath: /var/data
-      sizeGB: 1
