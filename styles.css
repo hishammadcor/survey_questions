@@ -153,6 +153,18 @@ body {
   text-decoration: underline;
 }
 
+.intro-block {
+  text-align: left;
+  padding: 8px 4px 16px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+.btn-primary:hover { background: #1d4ed8; }
+
 @media (max-width: 640px) {
   .controls { grid-template-columns: 1fr; }
 }

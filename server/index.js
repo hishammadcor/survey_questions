@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fetch from 'node-fetch';
+import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +16,12 @@ const ROOT = path.join(__dirname, '..');
 const DATA_DIR = path.join(__dirname, 'data');
 const SESSIONS_DIR = path.join(DATA_DIR, 'sessions');
 const RESULTS_CSV = path.join(DATA_DIR, 'results.csv');
+
+// Optional GitHub mirroring configuration
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const GITHUB_REPO = process.env.GITHUB_REPO || '';// format: owner/repo
+const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
+const GITHUB_DIR = process.env.GITHUB_DIR || 'survey_data';
 
 fs.mkdirSync(SESSIONS_DIR, { recursive: true });
 
@@ -50,6 +58,52 @@ function appendNewResponsesToCsv(previousLen, responses) {
     'participant_id','timestamp','index','manifest_index','audio','label','filename','response'
   ].map(k => toCsvValue(row[k])).join(',')).join('\n') + '\n';
   fs.appendFileSync(RESULTS_CSV, lines, 'utf8');
+}
+
+async function githubIsConfigured() {
+  return !!(GITHUB_TOKEN && GITHUB_REPO);
+}
+
+async function githubGetFileSha(repoPath) {
+  const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${encodeURIComponent(repoPath)}?ref=${encodeURIComponent(GITHUB_BRANCH)}`;
+  const res = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Accept': 'application/vnd.github+json' } });
+  if (res.status === 200) {
+    const json = await res.json();
+    return json.sha || null;
+  }
+  return null;
+}
+
+async function githubPutFile(repoPath, contentUtf8, message) {
+  const contentB64 = Buffer.from(contentUtf8, 'utf8').toString('base64');
+  const sha = await githubGetFileSha(repoPath);
+  const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${encodeURIComponent(repoPath)}`;
+  const body = { message, content: contentB64, branch: GITHUB_BRANCH };
+  if (sha) body.sha = sha;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${GITHUB_TOKEN}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`GitHub update failed: ${res.status} ${errText}`);
+  }
+}
+
+async function mirrorToGitHub(updatedSession, resultsCsvPath) {
+  if (!(await githubIsConfigured())) return;
+  const pid = updatedSession.participant_id;
+  const sessionRelPath = `${GITHUB_DIR}/sessions/${pid}.json`;
+  const resultsRelPath = `${GITHUB_DIR}/results.csv`;
+  const sessionContent = JSON.stringify(updatedSession, null, 2);
+  const resultsContent = fs.readFileSync(resultsCsvPath, 'utf8');
+  await githubPutFile(sessionRelPath, sessionContent, `Update session ${pid}`);
+  await githubPutFile(resultsRelPath, resultsContent, `Update results.csv (session ${pid})`);
 }
 
 app.post('/api/session', (req, res) => {
@@ -89,7 +143,32 @@ app.post('/api/progress', (req, res) => {
 
   try { appendNewResponsesToCsv(prevLen, responses); } catch (e) { /* ignore */ }
 
+  // Fire-and-forget GitHub mirroring
+  mirrorToGitHub(updated, RESULTS_CSV).catch(() => {});
+
   return res.json({ ok: true });
+});
+
+// Simple analytics/export endpoints
+app.get('/api/results.json', (req, res) => {
+  try {
+    const files = fs.readdirSync(SESSIONS_DIR).filter(f => f.endsWith('.json'));
+    const sessions = files.map(f => JSON.parse(fs.readFileSync(path.join(SESSIONS_DIR, f), 'utf8')));
+    res.json({ sessions });
+  } catch (e) {
+    res.status(500).json({ error: 'failed_to_read_results' });
+  }
+});
+
+app.get('/api/results.csv', (req, res) => {
+  try {
+    writeCsvHeaderIfNeeded();
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    const stream = fs.createReadStream(RESULTS_CSV, 'utf8');
+    stream.pipe(res);
+  } catch (e) {
+    res.status(500).send('');
+  }
 });
 
 app.listen(PORT, () => {
