@@ -1,0 +1,145 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #14151a;
+  background: #f7f8fa;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.participant-info {
+  font-size: 14px;
+  color: #475569;
+}
+
+.progress {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.loading {
+  padding: 24px;
+  text-align: center;
+  color: #475569;
+}
+
+.hidden { display: none; }
+
+.survey {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.question-text {
+  margin: 8px 0 12px;
+  font-size: 18px;
+}
+
+.audio-block {
+  margin: 8px 0 16px;
+}
+
+.sentence-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.sentence-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sentence-text {
+  margin: 6px 0 0;
+  font-style: italic;
+  color: #0f172a;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.02s ease-in-out, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover { background: #f8fafc; }
+.btn:active { transform: translateY(1px); }
+
+.btn-yes {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+.btn-yes:hover { background: #0ea371; }
+
+.btn-no {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+.btn-no:hover { background: #dc2626; }
+
+.btn-unsure {
+  background: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+.btn-unsure:hover { background: #d97706; }
+
+.done-block { text-align: center; padding: 24px 12px; }
+
+.error-block {
+  margin-top: 12px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.footer {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.link-btn {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .controls { grid-template-columns: 1fr; }
+}
