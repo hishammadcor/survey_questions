@@ -94,3 +94,28 @@ A minimal Node/Express server is included to store progress and maintain a CSV o
 - The server stores per-session JSON in `server/data/sessions/` and appends CSV rows to `server/data/results.csv` on every progress update.
 
 Deploy the server to any Node host (Render, Fly.io, Railway, etc.), then serve the static app from the same server for simplicity.
+
+### Optional: GitHub mirroring (server)
+Set the following environment variables where the server runs to mirror sessions and a cumulative CSV to a GitHub repo. This keeps data versioned and easy to analyze.
+
+- `GITHUB_TOKEN`: Personal access token with contents: read/write for the target repo
+- `GITHUB_REPO`: `owner/repo` (e.g., `hishammadcor/survey_questions`)
+- `GITHUB_BRANCH`: Branch to write to (default: `main`)
+- `GITHUB_DIR`: Base directory within the repo (default: `survey_data`)
+
+Example (locally):
+```bash
+cd server
+cp .env.example .env
+# edit .env and set:
+# GITHUB_TOKEN=github_pat_xxx
+# GITHUB_REPO=hishammadcor/survey_questions
+npm i
+npm start
+```
+
+On each progress save, the server will attempt to write:
+- `survey_data/sessions/<participant_id>.json`
+- `survey_data/results.csv`
+
+If the token or repo is not configured, the server continues to save locally.
